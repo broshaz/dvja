@@ -19,7 +19,7 @@ pipeline {
         //sh 'pip install truffleHog'
         //sh 'trufflehog --regex --entropy=False https://github.com/broshaz/webLemah.git >> keputusanTrufflehog.json'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True https://github.com/broshaz/webLemah.git --json >> keputusanTrufflehog'
-        sh 'docker run gesellix/trufflehog --regex --entropy=False https://github.com/broshaz/webLemah.git >> keputusanTrufflehog.json'
+        sh 'docker run -t gesellix/trufflehog --regex --entropy=False https://github.com/broshaz/webLemah.git >> keputusanTrufflehog.json'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True file:///dvja/* --json >> keputusanTrufflehog'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True file:///dvja/src/* >> keputusanTrufflehog.json'
         sh 'cat keputusanTrufflehog'
