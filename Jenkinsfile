@@ -16,8 +16,10 @@ pipeline {
     stage ('Check-The-Secrets') {
       steps {
         sh 'rm trufflehog || true'
-        sh 'docker run gesellix/trufflehog --json https://github.com/broshaz/webLemah.git > trufflehog'
+        sh 'docker run gesellix/trufflehog --regex --entropy=False https://github.com/broshaz/webLemah.git --json > trufflehog'
         sh 'cat trufflehog'
+       // sh 'git clone https://github.com/dxa4481/truffleHog.git'
+        
       }
     }
     stage ('Software Composition Analysis') {
