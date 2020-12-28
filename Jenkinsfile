@@ -16,7 +16,8 @@ pipeline {
     stage ('Check-The-Secrets') {
       steps {
         sh 'rm trufflehog || true'
-        sh 'docker run gesellix/trufflehog --regex --entropy=False https://github.com/broshaz/webLemah.git --json > trufflehog'
+        //sh 'docker run gesellix/trufflehog --regex --entropy= https://github.com/broshaz/webLemah.git --json > trufflehog'
+        sh 'docker run gesellix/trufflehog --regex --entropy= ./* --json > keputusanTrufflehog'
         sh 'cat trufflehog'
        // sh 'git clone https://github.com/dxa4481/truffleHog.git'
         
