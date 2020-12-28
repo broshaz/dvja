@@ -18,7 +18,7 @@ pipeline {
         sh 'rm trufflehog || true'
         sh 'docker run gesellix/trufflehog --regex --entropy=True https://github.com/broshaz/webLemah.git --json > keputusanTrufflehog'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True file:///dvja/* --json > keputusanTrufflehog'
-        sh 'cat trufflehog'
+        //sh 'cat trufflehog'
        // sh 'git clone https://github.com/dxa4481/truffleHog.git'
         
       }
