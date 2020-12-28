@@ -12,7 +12,7 @@ pipeline {
             ''' 
       }
     }
-    
+/*    
     stage ('Check-The-Secrets') {
       steps {
         sh 'rm trufflehog || true'
@@ -27,7 +27,8 @@ pipeline {
          sh 'unzip dependency-check-6.0.3-release.zip'
          sh './dependency-check/bin/dependency-check.sh --scan ./* --enableRetired -f "ALL" '
                }
-    }
+    } */
+    
     stage ('Build') {
       steps {
       sh 'mvn clean package'
@@ -36,7 +37,7 @@ pipeline {
     stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
-                sh 'scp -o StrictHostKeyChecking=no targets/dvja.war ubuntu@35.247.137.87:/home/ubuntu/prod/apache-tomcat-8.5.61/webapps/dvja.war'
+                sh 'scp -o StrictHostKeyChecking=no target/dvja.war ubuntu@35.247.137.87:/home/ubuntu/prod/apache-tomcat-8.5.61/webapps/dvja.war'
               }      
            }      
     }  
