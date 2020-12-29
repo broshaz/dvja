@@ -12,7 +12,7 @@ pipeline {
             ''' 
       }
     }
-    
+  /*  
     stage ('Check-The-Secrets') {
       steps {
         sh 'rm trufflehog || true'
@@ -30,7 +30,7 @@ pipeline {
        // sh 'git clone https://github.com/dxa4481/truffleHog.git'
         
       }
-    }
+    }*/
   /*  stage ('Software Composition Analysis') {
       steps {
          sh 'rm -r dependency-check* || true' 
