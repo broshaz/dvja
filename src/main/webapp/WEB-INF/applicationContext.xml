@@ -17,9 +17,13 @@
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://${mysql.host}/${mysql.db}" />
-        <property name="username" value="${mysql.username}" />
-        <property name="password" value="${mysql.password}" />
+        <!-- <property name="url" value="jdbc:mysql://${mysql.host}/${mysql.db}" /> -->
+        <property name="url" value="jdbc:mysql://localhost:3306/" />
+        <!-- <property name="username" value="${mysql.username}" /> -->
+        <property name="username" value="root" />
+        <!-- <property name="password" value="${mysql.password}" /> -->
+        <property name="password" value="" />
+        
     </bean>
 
     <bean class="org.springframework.orm.jpa.support.PersistenceAnnotationBeanPostProcessor" />
