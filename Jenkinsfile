@@ -20,7 +20,7 @@ pipeline {
         //sh 'docker run --user $(id -u):$(id -g) -v $(pwd) https://github.com/broshaz/webLemah.git --rm dxa4481/trufflehog file:///src >> keputusanTrufflehog.json'
         //sh 'docker run --user $(id -u):$(id -g) -v $(pwd) https://github.com/broshaz/webLemah.git --rm dxa4481/trufflehog https://github.com/broshaz/webLemah.git >> keputusanTrufflehog.json'
         sh 'docker pull dxa4481/trufflehog'
-        sh 'docker run -u $(id -u ${USER}):$(id -g ${USER}) dxa4481/trufflehog --regex --entropy=False --json https://github.com/broshaz/dvja.git > keputusanTrufflehog5'
+        sh 'docker run -u $(id -u ${USER}):$(id -g ${USER}) dxa4481/trufflehog --regex --entropy=False --json git_url=https://github.com/broshaz/dvja.git > keputusanTrufflehog5'
         //sh 'pip3 install truffleHog'
         //sh 'trufflehog --regex --entropy=False ./* >> keputusanTrufflehog.json'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True https://github.com/broshaz/webLemah.git --json >> keputusanTrufflehog'
