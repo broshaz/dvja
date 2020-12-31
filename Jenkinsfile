@@ -23,7 +23,7 @@ pipeline {
         //sh 'pip3 install truffleHog'
         //sh 'trufflehog --regex --entropy=False ./* >> keputusanTrufflehog.json'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True https://github.com/broshaz/webLemah.git --json >> keputusanTrufflehog'
-        sudo sh 'docker run dxa4481/trufflehog --regex --entropy=False --json https://github.com/broshaz/dvja.git > keputusanTrufflehog5'
+        sh 'docker run dxa4481/trufflehog --regex --entropy=False --json https://github.com/broshaz/dvja.git > keputusanTrufflehog5'
         //sh 'docker run -t dxa4481/trufflehog --regex --entropy=False https://github.com/broshaz/webLemah.git >> keputusanTrufflehog.json'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True file:///dvja/* --json >> keputusanTrufflehog'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True file:///dvja/src/* >> keputusanTrufflehog.json'
