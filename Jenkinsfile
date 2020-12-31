@@ -12,7 +12,7 @@ pipeline {
             ''' 
       }
     }
-  /*  
+   
     stage ('Check-The-Secrets') {
       steps {
         sh 'rm trufflehog || true'
@@ -20,9 +20,10 @@ pipeline {
         //sh 'docker run --user $(id -u):$(id -g) -v $(pwd) https://github.com/broshaz/webLemah.git --rm dxa4481/trufflehog file:///src >> keputusanTrufflehog.json'
         //sh 'docker run --user $(id -u):$(id -g) -v $(pwd) https://github.com/broshaz/webLemah.git --rm dxa4481/trufflehog https://github.com/broshaz/webLemah.git >> keputusanTrufflehog.json'
         //sh 'docker pull dxa4481/trufflehog'
-        sh 'pip3 install truffleHog'
-        sh 'trufflehog --regex --entropy=False ./* >> keputusanTrufflehog.json'
+        //sh 'pip3 install truffleHog'
+        //sh 'trufflehog --regex --entropy=False ./* >> keputusanTrufflehog.json'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True https://github.com/broshaz/webLemah.git --json >> keputusanTrufflehog'
+        sudo sh 'docker run dxa4481/trufflehog --regex --entropy=False --json https://github.com/broshaz/dvja.git > keputusanTrufflehog5'
         //sh 'docker run -t dxa4481/trufflehog --regex --entropy=False https://github.com/broshaz/webLemah.git >> keputusanTrufflehog.json'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True file:///dvja/* --json >> keputusanTrufflehog'
         //sh 'docker run gesellix/trufflehog --regex --entropy=True file:///dvja/src/* >> keputusanTrufflehog.json'
@@ -30,7 +31,7 @@ pipeline {
        // sh 'git clone https://github.com/dxa4481/truffleHog.git'
         
       }
-    }*/
+    }
   
     stage ('Software Composition Analysis') {
       steps {
