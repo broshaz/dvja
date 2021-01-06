@@ -49,7 +49,7 @@ pipeline {
       sh 'mvn clean package'
        }
     }
-    /*stage ('Deploy-To-Tomcat') {
+    stage ('Deploy-To-Tomcat') {
             steps {
            sshagent(['tomcat']) {
                 // yg asal sh 'scp -o StrictHostKeyChecking=no target/dvja-1.0-SNAPSHOT.war ubuntu@35.247.137.87:/home/ubuntu/prod/apache-tomcat-8.5.61/webapps/dvja.war'
@@ -57,6 +57,6 @@ pipeline {
              
               }      
            }      
-    }  */
+    }  
   }
 }
