@@ -21,7 +21,7 @@ pipeline {
         //sh 'docker run --user $(id -u):$(id -g) -v $(pwd) https://github.com/broshaz/webLemah.git --rm dxa4481/trufflehog file:///src >> keputusanTrufflehog.json'
         //sh 'docker run --user $(id -u):$(id -g) -v $(pwd) https://github.com/broshaz/webLemah.git --rm dxa4481/trufflehog https://github.com/broshaz/webLemah.git >> keputusanTrufflehog.json'
         sh 'docker pull dxa4481/trufflehog'
-        //sh 'docker run dxa4481/trufflehog ./src/ >> keputusanTrufflehog5.json
+        sh 'docker run dxa4481/trufflehog ./src/ >> keputusanTrufflehog.json
         //sh 'docker run -u $(id -u ${USER}):$(id -g ${USER}) dxa4481/trufflehog --json https://github.com/broshaz/dvja.git > keputusanTrufflehog5
         //sh 'docker run gesellix/trufflehog --regex --entropy=True https://github.com/broshaz/webLemah.git --json >> keputusanTrufflehog'
         //sh 'docker run dxa4481/trufflehog --regex --entropy=False --json https://github.com/broshaz/dvja.git > keputusanTrufflehog5'
@@ -34,14 +34,14 @@ pipeline {
       }
     }
   
-    stage ('Software Composition Analysis') {
+   /* stage ('Software Composition Analysis') {
       steps {
          sh 'rm -r dependency-check* || true' 
          sh 'wget https://github.com/jeremylong/DependencyCheck/releases/download/v6.0.3/dependency-check-6.0.3-release.zip'
          sh 'unzip dependency-check-6.0.3-release.zip'
          sh './dependency-check/bin/dependency-check.sh --scan ./src/* --enableRetired -f "ALL" '
                }
-    }
+    }*/
     
     stage ('Build') {
       steps {
