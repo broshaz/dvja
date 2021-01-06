@@ -56,7 +56,7 @@ pipeline {
                 sh 'scp -o StrictHostKeyChecking=no target/dvja-1.0-SNAPSHOT.war penggunabitorb6@instance-devsecops-jenkins-tomcat:/var/lib/tomcat9/webapps/dvja.war'
              
               }      
-           }      */
-    }  
+           }      
+    }  */
   }
 }
