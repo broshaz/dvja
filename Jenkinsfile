@@ -12,7 +12,7 @@ pipeline {
             ''' 
       }
     }
-   
+   /*
     stage ('Check-The-Secrets') {
       steps {
         //sh 'rm trufflehog || true'
@@ -43,7 +43,7 @@ pipeline {
          sh './dependency-check/bin/dependency-check.sh --scan ./src/* --enableRetired -f "ALL" '
                }
     }
-    
+    */
     stage ('Build') {
       steps {
       sh 'mvn clean package'
