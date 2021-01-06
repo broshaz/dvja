@@ -22,7 +22,7 @@ pipeline {
         //sh 'docker run --user $(id -u):$(id -g) -v $(pwd) https://github.com/broshaz/webLemah.git --rm dxa4481/trufflehog https://github.com/broshaz/webLemah.git >> keputusanTrufflehog.json'
         sh 'docker pull dxa4481/trufflehog'
         //sh 'docker run dxa4481/trufflehog .\src\ >> keputusanTrufflehog.json
-        //sh 'docker run -t dxa4481/trufflehog --json https://github.com/broshaz/dvja.git > keputusanTrufflehog'
+        sh 'docker run dxa4481/trufflehog --regex --json https://github.com/broshaz/dvja.git > keputusanTrufflehog'
         //sh 'docker run -t dxa4481/trufflehog https://github.com/broshaz/dvja.git >> keputusanTrufflehog.json '
         //sh 'docker run -u $(id -u ${USER}):$(id -g ${USER}) dxa4481/trufflehog --json https://github.com/broshaz/dvja.git > keputusanTrufflehog5
         //sh 'docker run gesellix/trufflehog --regex --entropy=True https://github.com/broshaz/webLemah.git --json >> keputusanTrufflehog'
