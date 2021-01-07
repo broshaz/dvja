@@ -16,8 +16,10 @@ pipeline {
     stage ('Check-The-Secrets') {
       steps {
         sh 'rm trufflehog || true'
-        sh 'docker pull gesellix/trufflehog'
-        sh 'docker run gesellix/trufflehog --json https://github.com/broshaz/dvja.git > keputusanTrufflehogDVJA.json'
+        //sh 'docker pull gesellix/trufflehog'
+        sh 'docker pull dxa4481/trufflehog'
+        //sh 'docker run gesellix/trufflehog --json https://github.com/broshaz/dvja.git > keputusanTrufflehogDVJA.json'
+        sh 'docker run dxa4481/trufflehog --json https://github.com/broshaz/dvja.git > keputusanTrufflehogDVJAdxa4481'
         //sh 'docker run gesellix/trufflehog --regex --entropy=False  https://github.com/broshaz/dvja.git > keputusanTrufflehogDVJAjson.json'
             
       }
