@@ -23,12 +23,12 @@ pipeline {
         //sh 'docker run dxa4481/trufflehog https://github.com/broshaz/dvja.git --json > keputusanTrufflehogDVJAdxa4481'
         //sh 'docker run gesellix/trufflehog --regex --entropy=False  https://github.com/broshaz/dvja.git > keputusanTrufflehogDVJAjson.json'
         //sh '''' set +e '''
-        sh 'cat keputusanTrufflehogDVJAgesellix'
-        sh 'rm keputusanTrufflehogDVJAjson.json'
+        sh 'cat keputusanTrufflehogDVJA.json'
+        sh 'rm keputusanTrufflehogDVJAgesellix'
             
       }
     }
-  
+  /*
     stage ('Software Composition Analysis') {
       steps {
          sh 'rm -r dependency-check* || true' 
@@ -36,7 +36,7 @@ pipeline {
          sh 'unzip dependency-check-6.0.3-release.zip'
          sh './dependency-check/bin/dependency-check.sh --scan ./src/* --enableRetired -f "ALL" '
       }
-    }
+    }*/
     
     stage ('Build') {
       steps {
