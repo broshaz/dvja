@@ -24,7 +24,7 @@ pipeline {
         //sh 'docker run gesellix/trufflehog --regex --entropy=False  https://github.com/broshaz/dvja.git > keputusanTrufflehogDVJAjson.json'
         //sh '''' set +e '''
         sh 'cat keputusanTrufflehogDVJA.json'
-        sh 'rm keputusanTrufflehogDVJAgesellix'
+        sh 'rm 	keputusanTrufflehog.json'
             
       }
     }
