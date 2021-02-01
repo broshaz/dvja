@@ -54,7 +54,7 @@ pipeline {
          //     sh 'cp target/dvja-1.0-SNAPSHOT.war /var/lib/tomcat9/webapps/dvja.war'
            sshagent(['tomcat']) {
                 // yg asal sh 'scp -o StrictHostKeyChecking=no target/dvja-1.0-SNAPSHOT.war ubuntu@35.247.137.87:/home/ubuntu/prod/apache-tomcat-8.5.61/webapps/dvja.war'
-                'scp -o StrictHostKeyChecking=no target/dvja-1.0-SNAPSHOT.war penggunabitorb6@34.66.14.171:/home/penggunabitorb6/apache-tomcat-9.0.41/webappsdvja.war'
+                sh 'scp -o StrictHostKeyChecking=no target/dvja-1.0-SNAPSHOT.war penggunabitorb6@34.66.14.171:/home/penggunabitorb6/apache-tomcat-9.0.41/webapps/dvja.war'
               }      
            }      
     }  
