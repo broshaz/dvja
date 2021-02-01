@@ -12,7 +12,7 @@ pipeline {
             ''' 
       }
     }
-   
+   /*
     stage ('Check-The-Secrets') {
       steps {
         sh 'rm trufflehog || true'
@@ -28,7 +28,7 @@ pipeline {
         //sh 'rm keputusanTrufflehog.json'
             
       }
-    }
+    }*/
  /*
     stage ('Software Composition Analysis') {
       steps {
@@ -49,7 +49,7 @@ pipeline {
       sh 'mvn clean package'
        }
     }
-    stage ('Deploy-To-Tomcat') {
+    /*stage ('Deploy-To-Tomcat') {
             steps {
          //     sh 'cp target/dvja-1.0-SNAPSHOT.war /var/lib/tomcat9/webapps/dvja.war'
            sshagent(['tomcat']) {
@@ -57,6 +57,6 @@ pipeline {
                 sh 'scp -o StrictHostKeyChecking=no target/*.war penggunabitorb6@34.66.14.171:/home/penggunabitorb6/apache-tomcat-9.0.41/webapps/dvja.war'
               }      
            }      
-    }  
+    }  */
   }
 }
