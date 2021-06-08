@@ -48,7 +48,7 @@ pipeline {
       steps {
       sh 'mvn clean package'
        }
-    }
+    }/*
     stage ('Deploy-To-Tomcat') {
             steps {
          //     sh 'cp target/dvja-1.0-SNAPSHOT.war /var/lib/tomcat9/webapps/dvja.war'
@@ -59,4 +59,4 @@ pipeline {
            }      
     }
   }
-}
+}*/
