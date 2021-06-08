@@ -29,7 +29,7 @@ pipeline {
             
       }
     }*/
- 
+ /*
     stage ('Software Composition Analysis') {
       steps {
       //   sh 'rm -r dependency-check* || true' 
@@ -42,7 +42,7 @@ pipeline {
          sh 'bash owasp-dependency-check.sh'
          sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
       }
-    }
+    }*/
  
     stage ('Build') {
       steps {
