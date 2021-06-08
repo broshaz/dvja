@@ -28,7 +28,7 @@ docker run --rm \
     --scan /src \
     #--scan ./src/* \
     #--scan ./* \
-    --format "ALL" \
+    #--format "ALL" \
     --project "$DC_PROJECT" \
     --out /report
     
