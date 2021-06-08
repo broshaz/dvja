@@ -55,7 +55,7 @@ pipeline {
            sshagent (['tomcat']) {
                 // yg asal sh 'scp -o StrictHostKeyChecking=no target/dvja-1.0-SNAPSHOT.war ubuntu@35.247.137.87:/home/ubuntu/prod/apache-tomcat-8.5.61/webapps/dvja.war'
                 //sh 'scp -o StrictHostKeyChecking=no target/*.war penggunabitorb4@35.224.19.78:/home/penggunabitorb4/prod/apache-tomcat-8.5.65/webapps/dvja.war'
-                sh 'scp -o StrictHostKeyChecking=no target/*.war penggunabitorb4@35.224.19.78:/home/penggunabitorb4/prod/apache-tomcat-8.5.65/webapps/dvja.war'
+                sh 'scp -o StrictHostKeyChecking=no target/*.war penggunabitorb4@instance-devsecops-tomcat:/home/penggunabitorb4/prod/apache-tomcat-8.5.65/webapps/dvja.war'
               }      
            }      
     }
