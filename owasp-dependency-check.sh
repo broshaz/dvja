@@ -29,7 +29,7 @@ docker run --rm \
     #--scan ./src/* \
     #--scan ./* \
     #--format "ALL" \
-    --project "$DC_PROJECT" \
+    #--project "$DC_PROJECT" \
     --out /report
     
     # Use suppression like this: (where /src == $pwd)
