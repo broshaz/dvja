@@ -26,10 +26,12 @@ docker run --rm \
     --volume $(pwd)/odc-reports:/report:z \
     owasp/dependency-check:$DC_VERSION \
     --scan /src \
-    --scan ./src/* \
+    #--scan ./src/* \
+    --scan ./* \
     --enableRetired -f "ALL" \
     --format "ALL" \
     --project "$DC_PROJECT" \
-    --out /report
+    #--out /report
+    --out /var/lib/jenkins/workspace/webapp-cicd-dvja/report
     # Use suppression like this: (where /src == $pwd)
     # --suppression "/src/security/dependency-check-suppression.xml"
