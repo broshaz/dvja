@@ -57,6 +57,6 @@ pipeline {
                 sh 'scp -o StrictHostKeyChecking=no target/*.war penggunabitorb6@34.66.14.171:/home/penggunabitorb6/apache-tomcat-9.0.41/webapps/dvja.war'
               }      
            }      
-    }
+    }*/
   }
 }
