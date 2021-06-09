@@ -61,5 +61,6 @@ pipeline {
               }      
            }      
     }
+    cleanWs(patterns: [[pattern: '.json', type: 'INCLUDE']])
   }
 }
