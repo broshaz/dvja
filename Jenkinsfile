@@ -61,6 +61,12 @@ pipeline {
               }      
            }      
     }
-    cleanWs(patterns: [[pattern: '.json', type: 'INCLUDE']])
+    
+    post {
+always {
+cleanWs(patterns: [[pattern: '.json', type: 'INCLUDE']])
+}
+}
+    
   }
 }
