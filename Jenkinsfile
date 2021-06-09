@@ -42,7 +42,8 @@ pipeline {
        //  sh 'bash owasp-dependency-check.sh'
        //  sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
       dependencyCheck additionalArguments: 'scan="./src/*" --enableRetired -format "ALL"', odcInstallation: 'OWASP Dependency Check Scanner'
-      dependencyCheckPublisher pattern: '/var/lib/jenkins/workspace/${WORKSPACE}/dependency-check-report.xml'
+      //dependencyCheckPublisher pattern: '/var/lib/jenkins/workspace/${WORKSPACE}/dependency-check-report.xml'
+      dependencyCheckPublisher pattern: 'dependency-check-report.xml'
       }
     }
  
