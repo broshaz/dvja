@@ -49,6 +49,7 @@ pipeline {
     stage ('Build') {
       steps {
       sh 'mvn clean package'
+      cleanWs(patterns: [[pattern: '.json', type: 'INCLUDE']])
        }
     }
     stage ('Deploy-To-Tomcat') {
@@ -61,12 +62,6 @@ pipeline {
               }      
            }      
     }
-    
-    post {
-always {
-cleanWs(patterns: [[pattern: '.json', type: 'INCLUDE']])
-}
-}
-    
+     
   }
 }
