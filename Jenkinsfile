@@ -45,7 +45,7 @@ pipeline {
       
       }
       {
-      dependencyCheckPublisher pattern: '/var/lib/jenkins/${WORKSPACE}/dependency-check-report.xml'
+      //dependencyCheckPublisher pattern: '/var/lib/jenkins/${WORKSPACE}/dependency-check-report.xml'
       }
     }
  
