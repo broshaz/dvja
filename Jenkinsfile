@@ -45,7 +45,7 @@ pipeline {
       
       }
       {
-      dependencyCheckPublisher pattern: '/job/webapp-cicd-dvja/45/execution/node/3/ws/dependency-check-report.xml'
+      dependencyCheckPublisher pattern: '/var/lib/jenkins/${WORKSPACE}/dependency-check-report.xml'
       }
     }
  
