@@ -32,17 +32,18 @@ pipeline {
  
     stage ('Software Composition Analysis') {
       steps {
-         sh 'rm -r dependency-check* || true' 
-         sh 'wget https://github.com/jeremylong/DependencyCheck/releases/download/v6.2.1/dependency-check-6.2.1-release.zip'
-         sh 'unzip dependency-check-6.2.1-release.zip'
-         sh './dependency-check/bin/dependency-check.sh --scan ./src/* --enableRetired -f "ALL" '
+         //sh 'rm -r dependency-check* || true' 
+         //sh 'wget https://github.com/jeremylong/DependencyCheck/releases/download/v6.2.1/dependency-check-6.2.1-release.zip'
+         //sh 'unzip dependency-check-6.2.1-release.zip'
+         //sh './dependency-check/bin/dependency-check.sh --scan ./src/* --enableRetired -f "ALL" '
       //   sh 'rm owasp* || true'
        //  sh 'wget "https://raw.githubusercontent.com/broshaz/dvja/master/owasp-dependency-check.sh" '
        //  sh 'chmod +x owasp-dependency-check.sh'
        //  sh 'bash owasp-dependency-check.sh'
        //  sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
-    //  dependencyCheck additionalArguments: 'scan="./src/*" --enableRetired -format "ALL"', odcInstallation: 'OWASP Dependency Check Scanner'
-    //  dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+      //dependencyCheck additionalArguments: 'scan="./src/*" --enableRetired -format "ALL"', odcInstallation: 'OWASP Dependency Check Scanner'
+      dependencyCheck additionalArguments: 'scan="./src/*" --enableRetired -format "ALL"', odcInstallation: 'ODC-6.1.5'  
+      dependencyCheckPublisher pattern: 'dependency-check-report.xml'
       //mail bcc: '', body: 'Please check your report ODC here http://34.72.61.98:8080/job/webapp-cicd-dvja/65/execution/node/3/ws/dependency-check-report.xml', cc: '', from: '', replyTo: '', subject: 'Your Findings Report', to: 'shazil.imri@gmail.com'
       emailext body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
             Check console output at $BUILD_URL to view the results.''', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS', to: 'shazil.imri@gmail.com' 
