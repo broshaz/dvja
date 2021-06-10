@@ -34,7 +34,7 @@ pipeline {
       steps {
          sh 'rm -r dependency-check* || true' 
          sh 'wget https://github.com/jeremylong/DependencyCheck/releases/download/v6.2.1/dependency-check-6.2.1-release.zip'
-         sh 'unzip dependency-check-6.0.3-release.zip'
+         sh 'unzip dependency-check-6.2.1-release.zip'
          sh './dependency-check/bin/dependency-check.sh --scan ./src/* --enableRetired -f "ALL" '
       //   sh 'rm owasp* || true'
        //  sh 'wget "https://raw.githubusercontent.com/broshaz/dvja/master/owasp-dependency-check.sh" '
