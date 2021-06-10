@@ -41,12 +41,12 @@ pipeline {
        //  sh 'chmod +x owasp-dependency-check.sh'
        //  sh 'bash owasp-dependency-check.sh'
        //  sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
-      //dependencyCheck additionalArguments: 'scan="./src/*" --enableRetired -format "ALL"', odcInstallation: 'OWASP Dependency Check Scanner'
+      dependencyCheck additionalArguments: 'scan="./src/*" --enableRetired -format "ALL"', odcInstallation: 'OWASP Dependency Check Scanner'
       //dependencyCheck additionalArguments: 'scan="./src/*" --enableRetired -format "ALL"', odcInstallation: 'ODC-6.1.6-Extractzip'
       //dependencyCheck additionalArguments: 'scan="./src/*" --enableRetired -format "ALL"', odcInstallation: 'ODC-bintray-6.2.1'  
-      //dependencyCheckPublisher pattern: 'dependency-check-report.xml'
+      dependencyCheckPublisher pattern: 'dependency-check-report.xml'
       //mail bcc: '', body: 'Please check your report ODC here http://34.72.61.98:8080/job/webapp-cicd-dvja/65/execution/node/3/ws/dependency-check-report.xml', cc: '', from: '', replyTo: '', subject: 'Your Findings Report', to: 'shazil.imri@gmail.com'
-      dependencyTrackPublisher artifact: 'bom.xml', autoCreateProjects: false, dependencyTrackApiKey: '', dependencyTrackFrontendUrl: '', dependencyTrackUrl: '', projectId: 'a4024f95-2dbc-4c7a-9206-2249c1b22e29', synchronous: true
+      //dependencyTrackPublisher artifact: 'bom.xml', autoCreateProjects: false, dependencyTrackApiKey: '', dependencyTrackFrontendUrl: '', dependencyTrackUrl: '', projectId: 'a4024f95-2dbc-4c7a-9206-2249c1b22e29', synchronous: true
         emailext body: '''$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
             Check console output at $BUILD_URL to view the results.''', subject: '$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS', to: 'shazil.imri@gmail.com' 
 
