@@ -43,7 +43,10 @@ pipeline {
        //  sh 'cat /var/lib/jenkins/OWASP-Dependency-Check/reports/dependency-check-report.xml'
       dependencyCheck additionalArguments: 'scan="./src/*" --enableRetired -format "ALL"', odcInstallation: 'OWASP Dependency Check Scanner'
       dependencyCheckPublisher pattern: 'dependency-check-report.xml'
-      mail bcc: '', body: 'Please check your report ODC here http://34.72.61.98:8080/job/webapp-cicd-dvja/65/execution/node/3/ws/dependency-check-report.xml', cc: '', from: '', replyTo: '', subject: 'Your Findings Report', to: 'shazil.imri@gmail.com'
+      //mail bcc: '', body: 'Please check your report ODC here http://34.72.61.98:8080/job/webapp-cicd-dvja/65/execution/node/3/ws/dependency-check-report.xml', cc: '', from: '', replyTo: '', subject: 'Your Findings Report', to: 'shazil.imri@gmail.com'
+      mail to: 'shazil.imri@gmail.com',
+    subject: "Job '${JOB_NAME}' (${BUILD_NUMBER}) is waiting for input",
+    body: "Please go to ${BUILD_URL} and verify the build"
       }
     }
  
