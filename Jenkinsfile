@@ -33,7 +33,7 @@ pipeline {
     stage ('Software Composition Analysis') {
       steps {
          sh 'rm -r dependency-check* || true' 
-         sh 'wget https://github.com/jeremylong/DependencyCheck/releases/download/v6.0.3/dependency-check-6.0.3-release.zip'
+         sh 'wget https://github.com/jeremylong/DependencyCheck/releases/download/v6.2.1/dependency-check-6.2.1-release.zip'
          sh 'unzip dependency-check-6.0.3-release.zip'
          sh './dependency-check/bin/dependency-check.sh --scan ./src/* --enableRetired -f "ALL" '
       //   sh 'rm owasp* || true'
